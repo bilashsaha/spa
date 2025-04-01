@@ -1,0 +1,20 @@
+<% frame_id = dom_id(post, "title_turbo_frame") %>
+<%= form_with model: post, data: { turbo_frame: frame_id } do %>
+  <%= turbo_frame_tag frame_id do %>
+    <h1>
+      <%= link_to post.title, edit_post_path(post), style: "color: inherit; text-decoration: none" %>
+    </h1>
+  <% end %>
+<% end %>
+
+<% frame_id = dom_id(post, "body_turbo_frame") %>
+<%= form_with model: post, data: { turbo_frame: frame_id } do %>
+  <%= turbo_frame_tag frame_id do %>
+    <p>
+      <%= link_to post.body, edit_post_path(post), style: "color: inherit; text-decoration: none"  %>
+    </p>
+  <% end %>
+<% end %>
+
+
+
